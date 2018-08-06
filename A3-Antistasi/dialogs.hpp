@@ -31,7 +31,7 @@ class first_load 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Loads the pervious personal session";
-			action = "closeDialog 0;nul = [true] execVM ""statSave\loadAccount.sqf"";";
+			action = "closeDialog 0;nul = [true] execVM Antistasi_fnc_loadAccount";";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
@@ -42,7 +42,7 @@ class first_load 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Starts a new game";
-			action = "closeDialog 0;if ((player == theBoss) and (isNil ""placementDone"") and !(isMultiplayer)) then {_nul = [] spawn placementselection};";
+			action = "closeDialog 0;if ((player == theBoss) and (isNil ""placementDone"") and !(isMultiplayer)) then {_nul = [] spawn Antistasi_fnc_pickHQLocation};";
 		};
 		/*
 		class HQ_button_Gremove: RscButton
@@ -221,7 +221,7 @@ class HQ_menu 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Take 100 € from faction pool and add it to your personnal account. It will damage your position among the faction in the commander career";
-			action = "if (isMultiPlayer) then {if (player == theBoss) then {nul=call theBossSteal} else {hint ""Only Player Commander has access to this function""}} else {hint ""This function is MP only""};";
+			action = "if (isMultiPlayer) then {if (player == theBoss) then {nul=call Antistasi_fnc_stavrosSteal} else {hint ""Only Player Commander has access to this function""}} else {hint ""This function is MP only""};";
 		};
 		class HQ_button_savegame: RscButton
 		{
@@ -243,7 +243,7 @@ class HQ_menu 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Maru will join your group. Ammobox must be empty. To rebuild, select the Build action near Maru";
-			action = "closeDialog 0;if (player == theBoss) then {nul = [] spawn moveHQ;} else {hint ""Only Player Commander has access to this function""};";
+			action = "closeDialog 0;if (player == theBoss) then {nul = [] spawn Antistasi_fnc_moveHQ;} else {hint ""Only Player Commander has access to this function""};";
 		};
 		class HQ_button_recruitUnit: RscButton
 		{
@@ -254,7 +254,7 @@ class HQ_menu 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Displays which server members are currently playing";
-			action = "if (player == theBoss) then {if (isMultiplayer) then {nul = [] call membersList} else {hint ""This function is MP only""}} else {hint ""Only Player Commander has access to this function""};";
+			action = "if (player == theBoss) then {if (isMultiplayer) then {nul = [] call Antistasi_fnc_membersList} else {hint ""This function is MP only""}} else {hint ""Only Player Commander has access to this function""};";
 		};
 		class HQ_button_recruitSquad: RscButton
 		{
@@ -265,7 +265,7 @@ class HQ_menu 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Cost: 5.000 €";
-			action = "closeDialog 0;if (player == theBoss) then {nul=[] spawn rebuildAssets} else {hint ""Only Player Commander has access to this function""};";
+			action = "closeDialog 0;if (player == theBoss) then {nul=[] spawn Antistasi_fnc_rebuildAssets} else {hint ""Only Player Commander has access to this function""};";
 		};
 		class HQ_button_vehicle: RscButton
 		{
@@ -287,7 +287,7 @@ class HQ_menu 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Check Faction garage";
-			action = "closeDialog 0;nul = [false] spawn garage";
+			action = "closeDialog 0;nul = [false] spawn Antistasi_fnc_garage";
 		};
 	};
 }; 										//slots: 6+1
@@ -346,7 +346,7 @@ class build_menu  			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Establish a new watchpost or roadblock depending on the type of terrain you select";
-			action = "closeDialog 0; [""create""] spawn puestoDialog";
+			action = "closeDialog 0; [""create""] spawn Antistasi_fnc_outpostDialog";
 		};
 		class 4slots_L2: RscButton
 		{

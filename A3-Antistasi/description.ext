@@ -40,9 +40,10 @@ class CfgTaskEnhancements
     };
 
 class CfgFunctions {
-    //#include "Functions\functionList.hpp"
+    #include "functions\functions.hpp"
     #include "JeroenArsenal\functions.hpp"
 };
+
 class Header
 {
 gameType = COOP;

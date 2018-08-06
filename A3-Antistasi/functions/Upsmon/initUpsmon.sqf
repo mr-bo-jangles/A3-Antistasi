@@ -160,42 +160,42 @@ UPSMON_Logic_civkill = _group createUnit ["LOGIC", [1,1,1], [], 0, "NONE"];
 _group = nil;
 _center = nil;
 
-UPSMON = compile preProcessFileLineNumbers "Scripts\UPSMON.sqf";
-UPSMON_CreateGroup = compile preProcessFileLineNumbers "Scripts\UPSMON\UPSMON_CreateGroup.sqf";
+UPSMON = Antistasi_fnc_upsmon;
+UPSMON_CreateGroup = Antistasi_fnc_upsmonCreateGroup;
 
 //Core
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\Core\init.sqf";
-call compile preprocessFileLineNumbers "Scripts\UPSMON\Get_pos\UPSMON_pos_init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\Core\init.sqf";
+call compile preprocessFileLineNumbers "functions\Upsmon\Get_pos\UPSMON_pos_init.sqf";
 //Params
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\Group\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\target\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\unit\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\Params\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\buildings\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\vehicles\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\cover\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\terrain\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\COMMON\MP\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\Group\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\target\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\unit\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\Params\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\buildings\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\vehicles\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\cover\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\terrain\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\COMMON\MP\init.sqf";
 //Modules
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\FORTIFY\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\AMBUSH\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ARTILLERY\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\FORTIFY\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\AMBUSH\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ARTILLERY\init.sqf";
 //Orders
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_PATROL\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_REINFORCEMENT\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_Transport\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_PATROLSRCH\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_FLANK\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_ASSAULT\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_DEFEND\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_RELAX\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_SUPPLY\init.sqf";
-call compile preProcessFileLineNumbers "Scripts\UPSMON\MODULES\ORDERS\UPSMON_RETREAT\init.sqf";//ADDED BY BARBOLANI
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_PATROL\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_REINFORCEMENT\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_Transport\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_PATROLSRCH\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_FLANK\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_ASSAULT\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_DEFEND\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_RELAX\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_SUPPLY\init.sqf";
+call compile preProcessFileLineNumbers "functions\Upsmon\MODULES\ORDERS\UPSMON_RETREAT\init.sqf";//ADDED BY BARBOLANI
 
-[] execvm "Scripts\UPSMON\COMMON\CORE\fnc\UPSMON_TRACK.sqf";
-[] execvm "Scripts\UPSMON\UPSMON_MAINLOOP.sqf";
-[] execvm "Scripts\UPSMON\UPSMON_MAINLOOPCiv.sqf";
+[] execvm "functions\Upsmon\COMMON\CORE\fnc\UPSMON_TRACK.sqf";
+[] execvm "functions\Upsmon\UPSMON_MAINLOOP.sqf";
+[] execvm "functions\Upsmon\UPSMON_MAINLOOPCiv.sqf";
 
 //get all mines types
 _UPSMON_Minesclassname = [] call UPSMON_getminesclass;
